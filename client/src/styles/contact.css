@@ -1,0 +1,71 @@
+.contact {
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#2b292973, #3434356f),
+    url("../images/call-us.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffe0;
+  border-radius: 20px;
+  padding: 20px;
+  width: 800px;
+  gap: 10px;
+}
+.contact-left,
+.contact-right {
+  flex: 1;
+  /* max-width: 300px; */
+}
+.contact-heading {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.contact-info-title {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.contact-info {
+  margin-bottom: 20px;
+}
+.contact-info-heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 20px;
+}
+.contact-info-icon {
+  font-size: 32px;
+  color: #00aaff;
+}
+.contact-btn {
+  background-color: #00aaff !important;
+  color: white;
+}
+@media only screen and (max-width: 769px) {
+  .contact-card {
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .contact-right,
+  .contact-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact {
+    min-width: none;
+    padding: 20px 0;
+  }
+}
