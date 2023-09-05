@@ -8,11 +8,11 @@
   flex-direction: column;
 }
 .intro-heading {
-  font-size: 56px;
+  font-size: 3rem;
   color: white;
   margin-bottom: 20px;
   margin-top: 50px;
-  font-weight: 600;
+  font-weight: 300;
   display: flex;
   align-items: center;
 }
@@ -20,11 +20,38 @@
   font-size: 78px;
 }
 .intro-content {
-  font-size: 22px;
+  font-size: 1.2rem;
   color: white;
   margin-bottom: 15px;
+  width: 50%;
+  text-align: center;
+  line-height: 1.5rem;
 }
-.btn {
+.intro-form-container {
+  background: #fff;
+  width: 50%;
+  height: 50px;
+  border: 1.8px solid #555;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.intro-search-input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+.intro-search-icon {
+  font-size: 22px;
+  cursor: pointer;
+}
+/* .btn {
   border: none;
   background: white;
   color: black;
@@ -36,7 +63,7 @@
   font-weight: 600;
   font-size: 18px;
   box-sizing: content-box;
-}
+} */
 .intro2,
 .footer {
   width: 100%;
@@ -68,24 +95,62 @@
 .card-text {
   margin: 20px 0;
 }
-@media only screen and (max-width: 768px) {
-  .intro-heading {
-    font-size: 45px;
+.card-btn-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+.card-btn{
+  border: none;
+  background: #ff0055;
+  color: white;
+  font-weight: 600;
+  width: fit-content;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn2{
+  background: #0059ff;
+}
+.card-btn-icon{
+  font-size: 18px;
+}
+@media only screen and (max-width: 769px) {
+  .intro-heading,
+  .intro-icon {
+    font-size: 2.5rem;
   }
+
+  .intro-form-container,
   .intro-content {
     width: 80%;
   }
+  .intro-content{
+    text-align: start;
+  }
 }
 @media only screen and (max-width: 426px) {
-  .intro{
-    height: 440px;
+  .intro-form-container,
+  .intro-content {
+    width: 100%;
+  }
+  .intro {
+    /* height: 440px; */
+    height: fit-content;
+    padding: 50px 20px;
   }
   .intro-heading {
-    width: 60%;
-    font-size: 32px;
-    margin-top: 20px;
+    font-size: 1.4rem;
   }
-  .intro-icon{
-    margin-right: 20px;
+  .intro-icon {
+    margin-right: 10px;
+    font-size: 1.4rem;
   }
 }

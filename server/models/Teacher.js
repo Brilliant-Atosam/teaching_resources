@@ -10,15 +10,7 @@ const schema = new mongoose.Schema({
   email: String,
   phone: String,
   institution: String,
-  bioDate: {
-    type: String,
-    default: "# this is h1",
-  },
-  bio: {
-    type: String,
-    default: "![alt text](https://www.markdownguide.org/assets/images/tux.png)",
-  },
-  subjectAreas: [],
+  bio: String,
   password: String,
   profile: String,
   resetLink: String,
