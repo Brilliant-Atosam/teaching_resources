@@ -1,11 +1,11 @@
 import React from "react";
-import { BiPlay } from "react-icons/bi";
-import { GiReceiveMoney } from "react-icons/gi";
+import { BsEyeglasses } from "react-icons/bs";
+import { GiTestTubes } from "react-icons/gi";
 import { CgYoutube } from "react-icons/cg";
 import { MdOfflinePin } from "react-icons/md";
-import { TfiHelpAlt } from "react-icons/tfi";
 import { IoHappyOutline } from "react-icons/io5";
 import { MdOutlineOndemandVideo } from "react-icons/md";
+import { TfiStatsUp } from "react-icons/tfi";
 const Intro2 = () => {
   return (
     <div className="container intro2">
@@ -28,59 +28,44 @@ const Intro2 = () => {
         </div>
       </div>
       <div className="card">
-        <GiReceiveMoney className="card-icon" />
-        <h1 className="card-heading">Cash in</h1>
+        <TfiStatsUp className="card-icon" />
+        <h1 className="card-heading">lesson plan</h1>
         <p className="card-text">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil rerum
-          vel animi ut eos iusto. Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Nihil rerum vel animi ut eos iusto.
+          Discover and acquire pre-made, expectly crafted lesson plans to
+          supercharge your teaching or learning journey with ease.
         </p>
         <div className="card-btn-container">
-          <button className="card-btn btn">
-            {" "}
-            <CgYoutube className="card-btn-icon" />
-            watch online
-          </button>
           <button className="card-btn btn2">
-            <MdOfflinePin className="card-btn-icon" /> offline access
+            <BsEyeglasses className="card-btn-icon" /> browse more
           </button>
         </div>
       </div>
       <div className="card">
-        <TfiHelpAlt className="card-icon" />
-        <h1 className="card-heading">Get help</h1>
+        <GiTestTubes className="card-icon" />
+        <h1 className="card-heading">Examination questions</h1>
         <p className="card-text">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil rerum
-          vel animi ut eos iusto. Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Nihil rerum vel animi ut eos iusto.
+          Access a repository of comprehensive examination questions and their
+          corresponding marking schemes to bloster your test readiness and
+          assessment accuracy.
         </p>
         <div className="card-btn-container">
-          <button className="card-btn btn">
-            {" "}
-            <CgYoutube className="card-btn-icon" />
-            watch online
-          </button>
           <button className="card-btn btn2">
-            <MdOfflinePin className="card-btn-icon" /> offline access
+            <BsEyeglasses className="card-btn-icon" /> browse more
           </button>
         </div>
       </div>
       <div className="card">
         <IoHappyOutline className="card-icon" />
-        <h1 className="card-heading">Easy work life</h1>
+        <h1 className="card-heading">teaching notes</h1>
         <p className="card-text">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil rerum
-          vel animi ut eos iusto. Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Nihil rerum vel animi ut eos iusto.
+          explore a comprehensive library of meticulously crafted teaching
+          notes, your key to unlocking in-depth understanding and effective
+          knowledge transfer.
         </p>
         <div className="card-btn-container">
-          <button className="card-btn btn">
-            {" "}
-            <CgYoutube className="card-btn-icon" />
-            watch online
-          </button>
+          
           <button className="card-btn btn2">
-            <MdOfflinePin className="card-btn-icon" /> offline access
+            <BsEyeglasses className="card-btn-icon" /> browse more
           </button>
         </div>
       </div>
