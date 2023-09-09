@@ -20,5 +20,15 @@ const routes = [
     exact: true,
     element: lazy(() => import("./pages/Contact")),
   },
+  {
+    path: "/library",
+    exact: true,
+    element: lazy(() => import("./pages/Library")),
+  },
+  {
+    path: "/watch",
+    exact: true,
+    element: lazy(() => import("./pages/WatchLesson")),
+  },
 ];
 export default routes;

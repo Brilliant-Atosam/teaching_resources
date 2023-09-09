@@ -10,6 +10,7 @@ import {
 import { useSelector } from "react-redux";
 import { menuItems } from "../util/options";
 import commonFuntions from "../util/commonFunctions";
+import { Link } from "react-router-dom";
 const Sidebar = () => {
   const { handleToggleMenu } = commonFuntions();
   const { toggleMenu } = useSelector((state) => state.globalStates);
@@ -21,9 +22,9 @@ const Sidebar = () => {
       </div>
       <div className="sidebar-middle">
         {menuItems.map((item, i) => (
-          <li className="sidebar-item" onClick={handleToggleMenu} key={i}>
-            {item}
-          </li>
+          <Link to={item.url} className="sidebar-item" onClick={handleToggleMenu} key={i}>
+            {item.title}
+          </Link>
         ))}
       </div>
       <div className="social">

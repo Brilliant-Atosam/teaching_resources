@@ -21,7 +21,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link to="/register" className="nav-item">
-            Market
+            Library
           </Link>
           <Link to="/register" className="nav-item">
             lessons

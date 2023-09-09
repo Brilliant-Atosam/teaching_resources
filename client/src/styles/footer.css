@@ -16,6 +16,9 @@
 .footer-item-container{
     min-width: 300px;
 }
+.footer-heading{
+    font-size: 1.6rem;
+}
 @media (max-width: 769px){
     .footer{
         justify-content: center !important;

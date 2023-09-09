@@ -1,0 +1,128 @@
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  background: #e8f4f5;
+}
+.filter-form {
+  width: 100%;
+  border: 2px solid #555;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  gap: 10px;
+}
+.filter-input {
+  border: none;
+  outline: none;
+  border-right: 1.5px solid #555;
+  width: 90%;
+  height: 100%;
+}
+.filter-select {
+  padding-right: 10px;
+  height: 100%;
+  border: none;
+  min-width: 80px;
+  outline: none;
+  position: relative;
+}
+.filter-option {
+  position: absolute;
+  top: 0;
+  color: #555;
+  /* padding: 10px; */
+}
+.filter-search-icon {
+  cursor: pointer;
+  border-left: 1.5px solid #555;
+  margin-left: 10px;
+}
+.library-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+.library-title {
+  font-size: 1.4rem;
+}
+.library-elements-container {
+  display: flex;
+  align-self: start;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+.library-card {
+  min-width: 250px;
+  width: 350px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 3px 2px rgba(85, 85, 85, 0.51);
+}
+.library-item-cover {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.library-item-title {
+  font-size: 1.4rem;
+  margin: 10px;
+}
+.library-item-btn {
+  border: none;
+  margin: 10px;
+  align-self: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #0059ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 80%;
+}
+.library-item-description {
+  padding: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 1.2;
+  max-height: 3.6;
+  text-overflow: ellipsis "[...see more]";
+}
+.play-btn {
+  background: #ff0055;
+}
+.see-more-link {
+  color: #0059ff;
+  text-decoration: underline;
+}
+@media (max-width: 769px) {
+  .filter-container {
+    padding: 20px;
+  }
+  .library-container {
+    padding: 20px;
+  }
+}
+@media (max-width: 769px) {
+  .library-title {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}

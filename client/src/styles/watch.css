@@ -1,0 +1,11 @@
+.video-container,
+.watch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100vh; */
+}
+.video-player {
+  height: calc(100vh - 60px);
+  /* aspect-ratio: 1/1; */
+}
