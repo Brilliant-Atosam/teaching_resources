@@ -1,11 +1,57 @@
-.video-container,
+
 .watch-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #d9e4f6;
+  padding: 20px;
   /* width: 100vh; */
 }
+.video-container {
+  width: 90%;
+}
 .video-player {
-  height: calc(100vh - 60px);
+  /* height: calc(100vh - 80px); */
+  border-radius: 10px;
+  width: 100%;
   /* aspect-ratio: 1/1; */
+}
+.video-details {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  padding: 10px 0;
+}
+.video-title {
+  font-size: 2rem;
+}
+.video-description {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.video-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tag-pill {
+  font-size: 1.1rem;
+  font-weight: 400;
+  background: #ef0b6a;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+@media (max-width:1025px){
+  .watch-container{
+    padding: 10px 0;
+  }
+  .video-container {
+    width: 100%;
+    padding: 10px;
+  }
 }
