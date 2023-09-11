@@ -5,6 +5,7 @@
   padding: 20px 40px;
   background: #e8f4f5;
 }
+
 .filter-form {
   width: 100%;
   border: 2px solid #555;
@@ -50,6 +51,35 @@
   justify-content: center;
   padding: 40px;
 }
+.next-page {
+  width: 100vw;
+  padding: 10px 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* justify-content: space-between; */
+}
+.next-btn {
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  background: #ee05a8;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 6px;
+}
+.next {
+  background: #0675ac !important;
+}
+.next:disabled {
+  background: #9bd4f0 !important;
+}
+.next-btn:disabled {
+  cursor: not-allowed;
+  background: #ed9bd4;
+}
 .library-title {
   font-size: 1.4rem;
 }
@@ -78,39 +108,48 @@
   font-size: 1.4rem;
   margin: 10px;
 }
+.library-card-action-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  gap: 12px;
+  background: #f2dcf2;
+}
 .library-item-btn {
   border: none;
-  margin: 10px;
+  /* margin: 10px; */
   align-self: center;
   font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
   padding: 5px 10px;
   border-radius: 5px;
-  background: #0059ff;
+  background: #ff0055;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 80%;
+  width: fit-content;
 }
-.library-item-description {
-  padding: 10px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-height: 1.2;
-  max-height: 3.6;
-  text-overflow: ellipsis "[...see more]";
-}
-.play-btn {
+
+/* .play-btn {
   background: #ff0055;
-}
-.see-more-link {
+} */
+.see-more-link,
+.library-card-action-link {
   color: #0059ff;
   text-decoration: underline;
+  font-size: 1.2rem;
+}
+.see-more-link:hover,
+.library-card-action-link:hover {
+  color: #9032fc;
+  font-weight: 600;
 }
 @media (max-width: 769px) {
   .filter-container {

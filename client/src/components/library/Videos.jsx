@@ -10,80 +10,29 @@ const Videos = () => {
         <div className="library-card">
           <img src={cover} alt="" className="library-item-cover" />
           <h1 className="library-item-title">Lorem ipsum dolor sit amet.</h1>
-          <p className="library-item-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-            doloremque placeat repellendus ipsam recusandae, odio autem
-            provident dolor dolorum quidem, velit beatae nam quam iusto
-            distinctio accusamus esse adipisci? Tempora doloribus ex omnis,
-            illum atque saepe corrupti deserunt. Cumque, veritatis!
-          </p>
-          <button className="library-item-btn play-btn">
-            <BsPlayCircle /> watch now
-          </button>
-          <button className="library-item-btn">
-            <BsDownload />
-            download (5 cedis)
-          </button>
-        </div>
-        <div className="library-card">
-          <img src={cover} alt="" className="library-item-cover" />
-          <h1 className="library-item-title">Lorem ipsum dolor sit amet.</h1>
-          <p className="library-item-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-            doloremque placeat repellendus ipsam recusandae, odio autem
-            provident dolor dolorum quidem, velit beatae nam quam iusto
-            distinctio accusamus esse adipisci? Tempora doloribus ex omnis,
-            illum atque saepe corrupti deserunt. Cumque, veritatis!
-          </p>
-          <button className="library-item-btn play-btn">
-            <BsPlayCircle /> watch now
-          </button>
-          <button className="library-item-btn">
-            <BsDownload />
-            download (5 cedis)
-          </button>
-        </div>
-        <div className="library-card">
-          <img src={cover} alt="" className="library-item-cover" />
-          <h1 className="library-item-title">Lorem ipsum dolor sit amet.</h1>
-          <p className="library-item-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-            doloremque placeat repellendus ipsam recusandae, odio autem
-            provident dolor dolorum quidem, velit beatae nam quam iusto
-            distinctio accusamus esse adipisci? Tempora doloribus ex omnis,
-            illum atque saepe corrupti deserunt. Cumque, veritatis!
-          </p>
-          <button className="library-item-btn play-btn">
-            <BsPlayCircle /> watch now
-          </button>
-          <button className="library-item-btn">
-            <BsDownload />
-            download (5 cedis)
-          </button>
-        </div>
-
-        <div className="library-card">
-          <img src={cover} alt="" className="library-item-cover" />
-          <h1 className="library-item-title">Lorem ipsum dolor sit amet.</h1>
-          <p className="library-item-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-            doloremque placeat repellendus ipsam recusandae, odio autem
-            provident dolor dolorum quidem, velit beatae nam quam iusto
-            distinctio accusamus esse adipisci? Tempora doloribus ex omnis,
-            illum atque saepe corrupti deserunt. Cumque, veritatis!
-          </p>
-          <button className="library-item-btn play-btn">
-            <BsPlayCircle /> watch now
-          </button>
-          <button className="library-item-btn">
-            <BsDownload />
-            download (5 cedis)
-          </button>
+          <div className="library-card-stat">
+            
+          </div>
+          <div className="library-card-action-container">
+            <button className="library-item-btn play-btn">
+              <BsPlayCircle /> watch now
+            </button>
+            {/* <button className="library-item-btn">
+              <BsDownload />
+              download (5 cedis)
+            </button> */}
+            <Link
+              className="library-card-action-link"
+              to="/lesson/details/1233"
+            >
+              see details
+            </Link>
+          </div>
         </div>
       </div>
-      <Link className="see-more-link" to="/lessons">
+      {/* <Link className="see-more-link" to="/pages/lessons/videos">
         See more video lessons
-      </Link>
+      </Link> */}
     </div>
   );
 };

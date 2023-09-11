@@ -1,13 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../styles/watch.css";
 import "../styles/library.css";
 import vid from "../videos/vid.mp4";
-import Videos from '../components/library/Videos'
+import Videos from "../components/library/Videos";
 const WatchLesson = () => {
+  const [watched, setWatched] = useState(0);
+  console.log(watched);
   useEffect(() => {
-    document
-      .getElementsByTagName("video")[0]
-      .addEventListener("contextmenu", (e) => e.preventDefault());
+    const vid = document.getElementsByTagName("video")[0];
+
+    vid.addEventListener("contextmenu", (e) => e.preventDefault());
+    // vid.addEventListener("play", (e) => setWatched(watched + 1));
   }, []);
   function clickTag(e) {
     console.log(e.target.innerText);

@@ -30,5 +30,10 @@ const routes = [
     exact: true,
     element: lazy(() => import("./pages/WatchLesson")),
   },
+  {
+    path: "/pages/lessons/videos",
+    exact: true,
+    element: lazy(() => import("./pages/Videos")),
+  },
 ];
 export default routes;
