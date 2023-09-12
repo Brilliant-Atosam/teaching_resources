@@ -108,6 +108,17 @@
   font-size: 1.4rem;
   margin: 10px;
 }
+.library-card-stat {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+.stat{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .library-card-action-container {
   width: 100%;
   display: flex;

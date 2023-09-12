@@ -1,6 +1,9 @@
 import React from "react";
 import cover from "../../images/cover.jpg";
 import { BsDownload, BsPlayCircle } from "react-icons/bs";
+import { CgEye } from "react-icons/cg";
+import { SlLike } from "react-icons/sl";
+import { FaRegCommentAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Videos = () => {
   return (
@@ -11,12 +14,23 @@ const Videos = () => {
           <img src={cover} alt="" className="library-item-cover" />
           <h1 className="library-item-title">Lorem ipsum dolor sit amet.</h1>
           <div className="library-card-stat">
-            
+            <span className="stat">
+              <CgEye />
+              <b>22</b>
+            </span>
+            <span className="stat">
+              <SlLike />
+              <b>2</b>
+            </span>
+            <span className="stat">
+              <FaRegCommentAlt />
+              <b>2</b>
+            </span>
           </div>
           <div className="library-card-action-container">
-            <button className="library-item-btn play-btn">
+            <Link to="/watch" className="library-item-btn play-btn">
               <BsPlayCircle /> watch now
-            </button>
+            </Link>
             {/* <button className="library-item-btn">
               <BsDownload />
               download (5 cedis)
@@ -30,9 +44,9 @@ const Videos = () => {
           </div>
         </div>
       </div>
-      {/* <Link className="see-more-link" to="/pages/lessons/videos">
+      <Link className="see-more-link" to="/pages/lessons/videos">
         See more video lessons
-      </Link> */}
+      </Link>
     </div>
   );
 };
