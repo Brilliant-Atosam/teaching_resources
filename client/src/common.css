@@ -16,6 +16,7 @@ h1 {
 }
 body {
   overflow-x: hidden;
+  max-width: 100vw;
 }
 body::-webkit-scrollbar {
   width: 7px;

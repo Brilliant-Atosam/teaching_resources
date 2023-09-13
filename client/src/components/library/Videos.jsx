@@ -3,7 +3,8 @@ import cover from "../../images/cover.jpg";
 import { BsDownload, BsPlayCircle } from "react-icons/bs";
 import { CgEye } from "react-icons/cg";
 import { SlLike } from "react-icons/sl";
-import { FaRegCommentAlt } from "react-icons/fa";
+import { RiDownloadLine } from "react-icons/ri";
+import { FaRegClock, FaRegCommentAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Videos = () => {
   return (
@@ -15,6 +16,10 @@ const Videos = () => {
           <h1 className="library-item-title">Lorem ipsum dolor sit amet.</h1>
           <div className="library-card-stat">
             <span className="stat">
+              <FaRegClock />
+              <b>22/11/23</b>
+            </span>
+            <span className="stat">
               <CgEye />
               <b>22</b>
             </span>
@@ -24,6 +29,10 @@ const Videos = () => {
             </span>
             <span className="stat">
               <FaRegCommentAlt />
+              <b>2</b>
+            </span>
+            <span className="stat">
+              <RiDownloadLine />
               <b>2</b>
             </span>
           </div>
