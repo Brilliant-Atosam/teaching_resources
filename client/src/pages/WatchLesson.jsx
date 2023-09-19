@@ -8,14 +8,18 @@ import { BiLike, BiDislike, BiShare } from "react-icons/bi";
 import { IoMdShareAlt } from "react-icons/io";
 import { TfiDownload } from "react-icons/tfi";
 import { HiOutlineClock, HiOutlineEye } from "react-icons/hi";
+import { Avatar } from "@mui/material";
 const WatchLesson = () => {
   const [watched, setWatched] = useState(0);
-  console.log(watched);
   useEffect(() => {
     const vid = document.getElementsByTagName("video")[0];
 
     vid.addEventListener("contextmenu", (e) => e.preventDefault());
-    // vid.addEventListener("play", (e) => setWatched(watched + 1));
+    const commentInput = document.getElementsByTagName("textarea")[0];
+    commentInput.addEventListener("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+    });
   }, []);
   function clickTag(e) {
     console.log(e.target.innerText);
@@ -74,29 +78,30 @@ const WatchLesson = () => {
           </h2>
           <div className="comments-container">
             <div className="comments-form-container">
+              <Avatar alt="Remy Sharp" src="" className="comment-avatar" />
               <div className="comment-input-container">
-                <input
+                <textarea
                   type="text"
                   className="comment-input"
                   placeholder="Add a comment"
-                />
+                ></textarea>
+                <button className="comment-btn">comment</button>
+              </div>
+            </div>
+            <div className="comments">
+              <div className="comment-container">
+                <div className="comment-top">
+                  <Avatar alt="user" src="" />{" "}
+                  <h2 className="commenter">Lorem, ipsum.</h2>
+                </div>
+                <div className="comment-value">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Recusandae natus ipsam molestiae esse aut quam rerum provident
+                  sequi quae exercitationem?
+                </div>
               </div>
             </div>
           </div>
-          {/* <div className="video-tags">
-            <span className="tag-pill" onClick={clickTag}>
-              science
-            </span>
-            <span className="tag-pill" onClick={clickTag}>
-              maths
-            </span>
-            <span className="tag-pill" onClick={clickTag}>
-              english
-            </span>
-            <span className="tag-pill" onClick={clickTag}>
-              french
-            </span>
-          </div> */}
         </div>
       </div>
       <div className="other-videos-container">
@@ -121,7 +126,9 @@ const WatchLesson = () => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste
               dolores ducimus accusamus.
             </h1>
-            <div className="other-video-stat">2h ago * 2 views * 5 downloads</div>
+            <div className="other-video-stat">
+              2h ago * 2 views * 5 downloads
+            </div>
           </div>
         </div>
       </div>
