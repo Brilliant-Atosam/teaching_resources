@@ -12,7 +12,8 @@
   box-shadow: 0px 0px 4px 3px #8e92939e;
   flex: 3;
 }
-#select-file {
+#select-file,
+#select-thumbnail {
   display: none;
 }
 .upload-container {
@@ -34,15 +35,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  background: #000;
+  gap: 10px;
+  width: fit-content;
+  background: #bc027e;
   height: 40px;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
+  padding: 0 20px;
+  align-self: center;
+}
+.choose-files-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 .add-video-icon {
   color: white !important;
+  font-size: 1.2rem;
 }
 .upload-btn {
   border: none;
@@ -53,4 +64,28 @@
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
+}
+.table-container {
+  height: fit-content;
+  padding: 10px;
+}
+.table-thumbnail {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+.table-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.table-action-btn {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.thumbnail-previewer {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  align-self: center;
 }
