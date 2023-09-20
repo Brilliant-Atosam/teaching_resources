@@ -32,7 +32,11 @@ export const columns = [
   },
   {
     field: "playlist",
-    headerName: <BiSolidPlaylist />,
+    headerName: (
+      <>
+        Playlist <BiSolidPlaylist />
+      </>
+    ),
     width: 140,
   },
   {

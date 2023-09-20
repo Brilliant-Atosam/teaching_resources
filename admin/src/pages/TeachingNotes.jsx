@@ -1,15 +1,16 @@
-import "../styles/homepage.css";
+import React from "react";
 import Navbar from "../components/nav/Navbar";
-import UploadVideos from "../components/UploadVideo";
+import UploadTeachingNotes from "../components/UploadTeachingNotes";
 import Table from "../components/Table";
 import { columns, rows } from "../data";
-const Homepage = () => {
+
+const TeachingNotes = () => {
   return (
     <>
       <Navbar />
       <div className="dashboard-container">
         <div className="dashboard-left">
-          <UploadVideos />
+          <UploadTeachingNotes />
         </div>
         <div className="dashboard-right">
           <div className="stat-container">
@@ -37,4 +38,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default TeachingNotes;

@@ -17,22 +17,22 @@ const Navbar = () => {
         <input type="checkbox" name="" id="menu-toggler" />
         <div className="side-menu">
           <a href="" className="nav-link">
-            Lorem, ipsum.
+            Videos
           </a>
           <a href="" className="nav-link">
-            Lorem, ipsum.
+            Teaching notes
           </a>
           <a href="" className="nav-link">
-            Lorem, ipsum.
+            Examination & Assesment
           </a>
           <a href="" className="nav-link">
-            Lorem, ipsum.
+            Lesson Plan
           </a>
           <a href="" className="nav-link">
-            Lorem, ipsum.
+            Detailed notes
           </a>
           <a href="" className="nav-link">
-            Lorem, ipsum.
+            Sign Out
           </a>
         </div>
       </div>

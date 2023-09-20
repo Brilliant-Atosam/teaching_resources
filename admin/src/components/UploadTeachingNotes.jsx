@@ -2,38 +2,40 @@ import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import { AiOutlineVideoCameraAdd } from "react-icons/ai";
 import { RiImageAddLine } from "react-icons/ri";
-const UploadVideos = () => {
+const UploadTeachingNotes = () => {
   const [image, setImage] = useState("");
-  const [video, setVideo] = useState("");
+  const [note, setNote] = useState("");
+  const [preveiw, setPreview] = useState("");
+  console.log(note);
+ 
   return (
     <div className="upload-container">
       <h1 className="upload-title">Upload new video</h1>
       <div className="preview-container">
-        {video && (
-          <video
-            className="video-previewer"
-            src={URL.createObjectURL(video)}
-            controls
-          ></video>
-        )}
         {image && (
           <img
             className="thumbnail-previewer"
             src={URL.createObjectURL(image)}
           />
         )}
+        {/* {note && (
+          <img
+            className="thumbnail-previewer"
+            src={URL.createObjectURL(image)}
+          />
+        )} */}
       </div>
       <div className="choose-files-container">
         <label htmlFor="select-file" className="select-file-label">
           <AiOutlineVideoCameraAdd className="add-video-icon" />
-          select video
+          select note
         </label>
         <input
           type="file"
           name=""
-          accept=".mp4"
+          accept=".pdf, .docx, .ppt"
           id="select-file"
-          onChange={(e) => setVideo(e.target.files[0])}
+          onChange={(e) => setNote(e.target.files[0])}
         />
         <label htmlFor="select-thumbnail" className="select-file-label">
           <RiImageAddLine className="add-video-icon" color="white" />
@@ -49,12 +51,11 @@ const UploadVideos = () => {
       </div>
       <TextField label="Title" />
       <TextField label="Price" />
-      <TextField label="Playlist" />
       <TextField label="Description" multiline />
       <TextField label="Tags" multiline />
-      <button className="upload-btn">upload video</button>
+      <button className="upload-btn">upload note</button>
     </div>
   );
 };
 
-export default UploadVideos;
+export default UploadTeachingNotes;
