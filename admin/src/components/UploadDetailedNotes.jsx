@@ -1,27 +1,15 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import React from "react";
+import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import { AiOutlineVideoCameraAdd } from "react-icons/ai";
 import { RiImageAddLine } from "react-icons/ri";
-const UploadVideos = () => {
+const UploadDetailedNotes = () => {
   const [image, setImage] = useState("");
-  const [video, setVideo] = useState("");
+  const [note, setNote] = useState("");
   return (
     <div className="upload-container">
-      <h1 className="upload-title">Upload new video</h1>
+      <h1 className="upload-title">Upload new detailed note</h1>
       <div className="preview-container">
-        {video && (
-          <video
-            className="video-previewer"
-            src={URL.createObjectURL(video)}
-            controls
-          ></video>
-        )}
         {image && (
           <img
             className="thumbnail-previewer"
@@ -32,14 +20,14 @@ const UploadVideos = () => {
       <div className="choose-files-container">
         <label htmlFor="select-file" className="select-file-label">
           <AiOutlineVideoCameraAdd className="add-video-icon" />
-          select video
+          select note
         </label>
         <input
           type="file"
           name=""
-          accept=".mp4"
+          accept=".pdf, .docx, .ppt"
           id="select-file"
-          onChange={(e) => setVideo(e.target.files[0])}
+          onChange={(e) => setNote(e.target.files[0])}
         />
         <label htmlFor="select-thumbnail" className="select-file-label">
           <RiImageAddLine className="add-video-icon" color="white" />
@@ -54,25 +42,12 @@ const UploadVideos = () => {
         />
       </div>
       <TextField label="Title" />
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Stream</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={0}
-          label="Stream"
-        >
-          <MenuItem value={10}>J.H.S</MenuItem>
-          <MenuItem value={20}>S.H.S</MenuItem>
-        </Select>
-      </FormControl>
       <TextField label="Price" />
-      <TextField label="Playlist" />
       <TextField label="Description" multiline />
       <TextField label="Tags" multiline />
-      <button className="upload-btn">upload video</button>
+      <button className="upload-btn">upload detailed note</button>
     </div>
   );
 };
 
-export default UploadVideos;
+export default UploadDetailedNotes;

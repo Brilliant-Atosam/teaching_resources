@@ -1,16 +1,16 @@
 import React from "react";
 import Navbar from "../components/nav/Navbar";
-import UploadTeachingNotes from "../components/UploadTeachingNotes";
 import Table from "../components/Table";
 import { notecolumns, noterows } from "../data";
+import UploadExams from "../components/UploadExams";
 
-const TeachingNotes = () => {
+const Exams = () => {
   return (
     <>
       <Navbar />
       <div className="dashboard-container">
         <div className="dashboard-left">
-          <UploadTeachingNotes />
+          <UploadExams />
         </div>
         <div className="dashboard-right">
           <div className="stat-container">
@@ -38,4 +38,4 @@ const TeachingNotes = () => {
   );
 };
 
-export default TeachingNotes;
+export default Exams;

@@ -32,6 +32,9 @@ const Navbar = () => {
             Detailed notes
           </a>
           <a href="" className="nav-link">
+            Scheme of Work
+          </a>
+          <a href="" className="nav-link">
             Sign Out
           </a>
         </div>

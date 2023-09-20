@@ -5,9 +5,7 @@ import { RiImageAddLine } from "react-icons/ri";
 const UploadTeachingNotes = () => {
   const [image, setImage] = useState("");
   const [note, setNote] = useState("");
-  const [preveiw, setPreview] = useState("");
-  console.log(note);
- 
+
   return (
     <div className="upload-container">
       <h1 className="upload-title">Upload new video</h1>
@@ -18,12 +16,6 @@ const UploadTeachingNotes = () => {
             src={URL.createObjectURL(image)}
           />
         )}
-        {/* {note && (
-          <img
-            className="thumbnail-previewer"
-            src={URL.createObjectURL(image)}
-          />
-        )} */}
       </div>
       <div className="choose-files-container">
         <label htmlFor="select-file" className="select-file-label">
