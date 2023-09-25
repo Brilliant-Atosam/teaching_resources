@@ -59,7 +59,7 @@
   gap: 5px;
 }
 .add-video-icon {
-  color: white !important;
+  fill: white !important;
   font-size: 1.2rem;
 }
 .upload-btn {
@@ -133,11 +133,11 @@
   justify-content: center;
   flex-direction: column;
 }
-.stat-numbers{
+.stat-numbers {
   font-weight: 600;
   color: #333;
 }
-.stat-title{
+.stat-title {
   font-size: 0.5rem;
 }
 @media (max-width: 901px) {

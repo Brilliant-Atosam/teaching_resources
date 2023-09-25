@@ -1,15 +1,34 @@
 import "./styles/common.css";
-import Homepage from "./pages/Homepage";
-import TeachingNotes from "./pages/TeachingNotes";
-import Exams from "./pages/Exams";
-import SchemeOfWork from "./pages/SchemeOfWork";
-import LessonPlan from "./pages/LessonPlan";
-import DetailedNotes from "./pages/DetailedNotes";
-import VideoDetails from "./pages/VideoDetails";
-
-
+import Navbar from "./components/nav/Navbar";
+import { Route, Routes } from "react-router-dom";
+import routes from "./routes";
+import { Suspense, useState } from "react";
+import SuspenseComponent from "./Suspense";
+import Login from "./pages/Login";
 const App = () => {
-  return <VideoDetails />;
+  const [user, setUser] = useState(false);
+  return (
+    <>
+      {user && <Navbar />}
+      <Routes>
+        {routes.map((route, i) => (
+          <Route
+            element={
+              !user ? (
+                <Login />
+              ) : (
+                <Suspense fallback={<SuspenseComponent />}>
+                  <route.element />
+                </Suspense>
+              )
+            }
+            path={route.path}
+            key={i}
+          />
+        ))}
+      </Routes>
+    </>
+  );
 };
 
 export default App;

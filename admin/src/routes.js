@@ -6,34 +6,39 @@ const routes = [
     element: lazy(() => import("./pages/Homepage")),
   },
   {
-    path: "/login",
+    path: "/scheme_of_work",
     exact: true,
-    element: lazy(() => import("./pages/Login")),
+    element: lazy(() => import("./pages/SchemeOfWork")),
   },
   {
-    path: "/register",
+    path: "/exams",
     exact: true,
-    element: lazy(() => import("./pages/Register")),
+    element: lazy(() => import("./pages/Exams")),
   },
   {
-    path: "/contact",
+    path: "/detailed_notes",
     exact: true,
-    element: lazy(() => import("./pages/Contact")),
+    element: lazy(() => import("./pages/DetailedNotes")),
   },
   {
-    path: "/library",
+    path: "/lesson_plan",
     exact: true,
-    element: lazy(() => import("./pages/Library")),
+    element: lazy(() => import("./pages/LessonPlan")),
   },
   {
-    path: "/watch",
+    path: "/teaching_notes",
     exact: true,
-    element: lazy(() => import("./pages/WatchLesson")),
+    element: lazy(() => import("./pages/TeachingNotes")),
   },
   {
-    path: "/pages/lessons/videos",
+    path: "/video/details/:id",
     exact: true,
-    element: lazy(() => import("./pages/Videos")),
+    element: lazy(() => import("./pages/VideoDetails")),
+  },
+  {
+    path: "doc/details/:id",
+    exact: true,
+    element: lazy(() => import("./pages/DocxDetails")),
   },
 ];
 export default routes;

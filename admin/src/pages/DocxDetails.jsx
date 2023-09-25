@@ -1,33 +1,18 @@
 import "../styles/details.css";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-} from "@mui/material";
-import { GridExpandMoreIcon } from "@mui/x-data-grid";
 import Navbar from "../components/nav/Navbar";
-import vid from "../vids/video.mp4";
 import poster from "../images/thumbnail.png";
-import { BiDislike, BiLike } from "react-icons/bi";
-import { TfiDownload } from "react-icons/tfi";
-import { HiOutlineClock, HiOutlineEye } from "react-icons/hi2";
-import { IoMdShareAlt } from "react-icons/io";
+import { Typography } from "@mui/material";
 import { MdDeleteOutline, MdMovieEdit } from "react-icons/md";
 import AccordionComponent from "../components/Accordion";
 import MediaStats from "../components/MediaStats";
-const VideoDetails = () => {
+const DocxDetails = () => {
   return (
     <>
       <div className="details-container">
-        <video
-          src={vid}
-          controls
-          poster={poster}
-          className="video-player"
-        ></video>
+        <img src={poster} alt="" className="video-player" />
         <Typography className="video-title">
-          Lorem ipsum dolor sit amet.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat et
+          quas eligendi ex veniam!
         </Typography>
         <MediaStats />
         <AccordionComponent />
@@ -44,4 +29,4 @@ const VideoDetails = () => {
   );
 };
 
-export default VideoDetails;
+export default DocxDetails;
