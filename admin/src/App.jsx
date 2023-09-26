@@ -5,6 +5,7 @@ import routes from "./routes";
 import { Suspense, useState } from "react";
 import SuspenseComponent from "./Suspense";
 import Login from "./pages/Login";
+import SnackbarComponent from "./components/Snackbar";
 const App = () => {
   const [user, setUser] = useState(false);
   return (
@@ -27,6 +28,7 @@ const App = () => {
           />
         ))}
       </Routes>
+      <SnackbarComponent />
     </>
   );
 };
