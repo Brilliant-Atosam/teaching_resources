@@ -1,6 +1,14 @@
+const { verifyToken } = require("../verification/verify");
+
 const router = require("express").Router();
 // GET MATERIALS
-router.get("/", (req, res) => res.send("Hello"));
+router.get("/", verifyToken, async (req, res) => {
+  try {
+    res.send("hello");
+  } catch (err) {
+    res.status(500).send("server error");
+  }
+});
 // ADD MATERIAL
 router.post("/", (req, res) => res.send("Hello"));
 // EDIT MATERIAL

@@ -1,9 +1,10 @@
-require("./dbconnection");
+require("./db_connection");
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const Teacher = require("./models/Teacher");
 const app = express();
+const bcrypt = require('bcryptjs')
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
@@ -15,4 +16,5 @@ app.use("/auth", require("./routes/auth"));
 app.use("/purchase", require("./routes/purchases"));
 app.use("/materials", require("./routes/materials"));
 app.use("/withdrawal", require("./routes/withdrawals"));
+// console.log(bcrypt.hashSync('bongo'));
 app.listen(8000, () => console.log("Server running..."));
