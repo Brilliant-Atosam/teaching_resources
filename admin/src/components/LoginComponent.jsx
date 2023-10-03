@@ -12,7 +12,7 @@ const LoginComponent = () => {
     showPassword,
     handleLogin,
   } = useLogin();
-  console.log(loginData);
+  
   return (
     <div className="login-form-container">
       <div className="login-greetings">
@@ -51,7 +51,7 @@ const LoginComponent = () => {
         disabled={
           loginData.loginID.length < 5
             ? true
-            : loginData.password.length < 6
+            : loginData.password.length < 5
             ? true
             : false
         }

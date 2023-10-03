@@ -1,16 +1,26 @@
 const { verifyToken } = require("../verification/verify");
-
+const Video = require("../models/Video");
 const router = require("express").Router();
 // GET MATERIALS
-router.get("/", verifyToken, async (req, res) => {
+router.get("/videos", verifyToken, async (req, res) => {
   try {
-    res.send("hello");
+    const videos = await Video.find();
+    res.send(videos);
   } catch (err) {
-    res.status(500).send("server error");
+    res.status(err.status).send(err.message);
   }
 });
-// ADD MATERIAL
-router.post("/", (req, res) => res.send("Hello"));
+// ADD video
+router.post("/video", async (req, res) => {
+  const newVideo = new Video(req.body);
+  console.log(newVideo);
+  try {
+    await newVideo.save();
+    res.status(201).json(newVideo);
+  } catch (err) {
+    res.status(err.status).send(err.message);
+  }
+});
 // EDIT MATERIAL
 router.put("/", (req, res) => res.send("Hello"));
 // DELETE MATERIAL

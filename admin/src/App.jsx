@@ -6,16 +6,18 @@ import { Suspense, useState } from "react";
 import SuspenseComponent from "./Suspense";
 import Login from "./pages/Login";
 import SnackbarComponent from "./components/Snackbar";
+import { useSelector } from "react-redux";
+import Upload from "./pages/Upload";
 const App = () => {
-  const [user, setUser] = useState(false);
+  const admin = useSelector((state) => state.admin.adminCredential);
   return (
     <>
-      {user && <Navbar />}
+      {!admin && <Navbar />}
       <Routes>
         {routes.map((route, i) => (
           <Route
             element={
-              !user ? (
+              admin ? (
                 <Login />
               ) : (
                 <Suspense fallback={<SuspenseComponent />}>

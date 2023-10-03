@@ -3,7 +3,12 @@ import { BiPlayCircle, BiSolidPlaylist } from "react-icons/bi";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { SlLike } from "react-icons/sl";
 import { IoEyeOutline, IoStatsChart } from "react-icons/io5";
-import { MdDelete, MdDeleteOutline, MdEditDocument, MdMovieEdit } from "react-icons/md";
+import {
+  MdDelete,
+  MdDeleteOutline,
+  MdEditDocument,
+  MdMovieEdit,
+} from "react-icons/md";
 import thumbnail from "./images/thumbnail.png";
 export const rows = [
   {
@@ -44,6 +49,7 @@ export const columns = [
   },
   {
     field: "playlist",
+
     headerName: (
       <>
         Playlist <BiSolidPlaylist />
@@ -122,4 +128,13 @@ export const notecolumns = [
       </div>
     ),
   },
+];
+export const streams = [
+  { title: "S.H.S", value: "s.h.s" },
+  { title: "J.H.S", value: "j.h.s" },
+];
+export const years = [
+  { title: "Form 1", value: "form 1" },
+  { title: "Form 2", value: "form 2" },
+  { title: "Form 3", value: "form 3" },
 ];
