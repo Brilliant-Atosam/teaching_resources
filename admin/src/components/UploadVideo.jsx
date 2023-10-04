@@ -11,7 +11,7 @@ import { ContentState, EditorState } from "draft-js";
 import { convertToHTML } from "draft-convert";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import React, { useState } from "react";
-import { AiOutlineVideoCameraAdd } from "react-icons/ai";
+import { AiFillPicture, AiOutlineVideoCameraAdd } from "react-icons/ai";
 import { RiImageAddLine } from "react-icons/ri";
 import StepperComponent from "./Stepper";
 import useUploadVideo from "../custom_hooks/useUploadVideo";
@@ -29,59 +29,73 @@ const UploadVideos = () => {
     setAnyStep,
     onDrop,
     steps,
+    video,
+    thumbnail,
+    handleThumbnail,
+    lesson,
+    handleUpload,
+    setLesson,
   } = useUploadVideo();
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [image, setImage] = useState("");
-  const [video, setVideo] = useState("");
+
   const [desc, setDesc] = useState("");
-  // console.log(desc);
   const getText = () => {
     const contentState = editorState.getCurrentContent();
     setDesc(convertToHTML(contentState));
+    setLesson((prev) => ({
+      ...prev,
+      description: convertToHTML(contentState),
+    }));
   };
   const { getInputProps, getRootProps } = useDropzone({ onDrop });
+
   return (
     <div className="upload-container">
       <h1 className="upload-title">Upload new video</h1>
       <StepperComponent step={step} steps={steps} setStep={setAnyStep} />
-      <div className="preview-container">
-        {video && (
-          <video
-            className="video-previewer"
-            src={URL.createObjectURL(video)}
-            controls
-          ></video>
-        )}
-        {image && (
-          <img
-            className="thumbnail-previewer"
-            src={URL.createObjectURL(image)}
-          />
-        )}
-      </div>
+
       {step === 1 && (
-        <div className="drop-file" {...getRootProps()}>
-          <input {...getInputProps()} />
-          <div className="drop-file-sub">
-            <span>Drag and drop files here...</span>
-            <b>OR</b>
-            <button className="choose-file">click to select file</button>
+        <>
+          <div className="drop-file" {...getRootProps()}>
+            <input {...getInputProps()} />
+            <div className="drop-file-sub">
+              <div className="preview-container">
+                {video && (
+                  <video
+                    className="video-previewer"
+                    src={URL.createObjectURL(video)}
+                    controls
+                    poster={thumbnail ? URL.createObjectURL(thumbnail) : ""}
+                  ></video>
+                )}
+              </div>
+              <span>Drag and drop files here...</span>
+              <b>OR</b>
+              <button className="choose-file">click to select file</button>
+            </div>
           </div>
-        </div>
+          {video && (
+            <div className="thumbnail-selector">
+              <label
+                htmlFor="thumbnail-selector-input"
+                className="thumbnail-selector-label"
+              >
+                <AiFillPicture />
+                <span className="thumbnail-selector-text">
+                  Select thumbnail
+                </span>
+              </label>
+              <input
+                type="file"
+                id="thumbnail-selector-input"
+                onChange={(e) => handleThumbnail(e)}
+              />
+            </div>
+          )}
+        </>
       )}
-      {/* <div className="choose-files-container">
-        <label htmlFor="select-thumbnail" className="select-file-label">
-          <RiImageAddLine className="add-video-icon" color="white" />
-          select thumbnail
-        </label>
-        <input
-          type="file"
-          name=""
-          id="select-thumbnail"
-          accept="image/png, image/jpg, image/jpeg"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
-      </div> */}
+
       {step === 2 && (
         <>
           <TextField label="Subject" onBlur={(e) => setSubject(e)} />
@@ -91,12 +105,15 @@ const UploadVideos = () => {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              value={10}
+              value={lesson.stream}
               label="Stream"
-              onBlur={(e) => setStream(e)}
+              defaultValue={streams[0]}
+              onChange={(e) => setStream(e)}
             >
               {streams.map((stream) => (
-                <MenuItem value={stream.value}>{stream.title}</MenuItem>
+                <MenuItem value={stream.value} key={stream.value}>
+                  {stream.title}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -105,12 +122,15 @@ const UploadVideos = () => {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              value={10}
-              label="Stream"
-              onBlur={(e) => setYear(e)}
+              value={lesson.year}
+              label="Year/Class"
+              onChange={(e) => setYear(e)}
+              defaultValue={years[0]}
             >
               {years.map((year) => (
-                <MenuItem value={year.value}>{year.title}</MenuItem>
+                <MenuItem value={year.value} key={year.title}>
+                  {year.title}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -118,15 +138,13 @@ const UploadVideos = () => {
       )}
       {step === 3 && (
         <>
-          <TextField label="Price" />
-          <TextField label="Playlist" />
+          <TextField label="Price" onBlur={(e) => setPrice(e)} />
+          <TextField label="Playlist" onBlur={(e) => setPlaylist(e)} />
           <Editor
             editorState={editorState}
-            onChange={getText}
+            onBlur={getText}
             placeholder="Description"
             editorClassName="editor"
-            // editorStyle={}
-            // onCha
             onEditorStateChange={setEditorState}
           />
           <TextField label="Tags" multiline />
@@ -149,9 +167,35 @@ const UploadVideos = () => {
         </button>
       </div>
       {step === 4 && (
-        <button className="upload-btn" onClick={getText}>
-          upload video
-        </button>
+        <>
+          <div className="upload-preview-container">
+            <video
+              src={URL.createObjectURL(video)}
+              poster={thumbnail && URL.createObjectURL(thumbnail)}
+              controls
+              className="upload-preview-video"
+            ></video>
+            <div className="upload-preview-details-container">
+              <h1 className="preview-title">{lesson.title}</h1>
+              <h3 className="meta-data">
+                Stream: <b>{lesson.stream}</b>
+              </h3>
+              <h3 className="meta-data">
+                Year: <b>{lesson.year}</b>
+              </h3>
+              <h3 className="meta-data">
+                Price: <b>{lesson.price}</b>
+              </h3>
+              <h3 className="meta-data">
+                Playlist: <b>{lesson.playlist}</b>
+              </h3>
+            </div>
+            <div className="upload-preview-description"></div>
+          </div>
+          <button className="upload-btn" onClick={handleUpload}>
+            upload video
+          </button>
+        </>
       )}
     </div>
   );
