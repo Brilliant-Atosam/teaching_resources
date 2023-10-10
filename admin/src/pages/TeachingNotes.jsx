@@ -1,4 +1,4 @@
-import React from "react";
+import "../styles/homepage.css";
 import Navbar from "../components/nav/Navbar";
 import UploadTeachingNotes from "../components/UploadTeachingNotes";
 import Table from "../components/Table";
@@ -13,7 +13,7 @@ const TeachingNotes = () => {
           <UploadTeachingNotes />
         </div>
         <div className="dashboard-right">
-        <Stats />
+          <Stats />
           <Table rows={noterows} columns={notecolumns} />
         </div>
       </div>

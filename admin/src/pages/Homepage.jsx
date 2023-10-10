@@ -4,7 +4,9 @@ import UploadVideos from "../components/UploadVideo";
 import Table from "../components/Table";
 import { columns, rows } from "../data";
 import Stats from "../components/Stats";
+import useUploadVideo from "../custom_hooks/useUploadVideo";
 const Homepage = () => {
+  const { lesson } = useUploadVideo();
   return (
     <>
       <div className="dashboard-container">

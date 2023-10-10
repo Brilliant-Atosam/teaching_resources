@@ -1,7 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
-
+import { useSelector, useDispatch } from "react-redux";
+import { request } from "../request";
+import { loadVideos } from "../redux/videosSlice";
 const useUploadVideo = () => {
+  const dispatch = useDispatch();
+  const videos = useSelector((state) => state.videos.videos);
+
   const [video, setVideo] = useState(null);
   const [thumbnail, setThumbnail] = useState(null);
   const handleThumbnail = (e) => setThumbnail(e.target.files[0]);
@@ -15,7 +20,9 @@ const useUploadVideo = () => {
     video_url: "",
     thumbnail_url: "",
     description: <></>,
+    tags: [],
   });
+  console.log(lesson);
   const setTitle = (e) =>
     setLesson((prev) => ({ ...prev, title: e.target.value }));
   const setSubject = (e) =>
@@ -28,6 +35,8 @@ const useUploadVideo = () => {
     setLesson((prev) => ({ ...prev, playlist: e.target.value }));
   const setPrice = (e) =>
     setLesson((prev) => ({ ...prev, price: e.target.value }));
+  const setTags = (e) =>
+    setLesson((prev) => ({ ...prev, tags: e.target.value.split(", ") }));
   // steps
   const [step, setStep] = useState(1);
   const setAnyStep = (index) => setStep(index);
@@ -35,11 +44,6 @@ const useUploadVideo = () => {
   //   handling onDrop event
   const onDrop = (selectedFile) => {
     setVideo(selectedFile[0]);
-    const newFormData = new FormData();
-    newFormData.append("video", video);
-    newFormData.append("upload_preset", "s0veifxe");
-    newFormData.append("you", "ryrrr");
-    console.log(newFormData);
   };
   const handleUpload = async () => {
     // upload video to cloudinary
@@ -56,7 +60,7 @@ const useUploadVideo = () => {
         `https://api.cloudinary.com/v1_1/dqwtfxjbg/video/upload`,
         formData
       );
-      setLesson((prev) => ({
+      await setLesson((prev) => ({
         ...prev,
         video_url: videoResponse.data.secure_url,
       }));
@@ -65,16 +69,19 @@ const useUploadVideo = () => {
         "https://api.cloudinary.com/v1_1/dqwtfxjbg/image/upload",
         thumbnailData
       );
-      setLesson((prev) => ({
+      await setLesson((prev) => ({
         ...prev,
         thumbnail_url: thumbnailResponse.data.secure_url,
       }));
+      // add to redux
+      await dispatch(loadVideos([...videos, lesson]));
       // save data to db
+      const apiResponse = await request.post("/materials/video", lesson);
+      window.alert(apiResponse.data);
     } catch (err) {
       console.log(err.response ? err.response.data : "Network error");
     }
   };
-  console.log(lesson);
   return {
     setTitle,
     setSubject,
@@ -93,6 +100,7 @@ const useUploadVideo = () => {
     lesson,
     handleUpload,
     setLesson,
+    setTags,
   };
 };
 

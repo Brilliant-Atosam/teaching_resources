@@ -22,11 +22,14 @@ const videoSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  cover: String,
-  video: String,
+  thumbnail_url: String,
+  video_url: String,
   comments: [],
   stream: String,
   year: String,
+  subject: String,
+  playlist: String,
+  tags: [],
   description: String,
 });
 videoSchema.pre("save", function (next) {

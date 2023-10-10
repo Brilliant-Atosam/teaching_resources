@@ -1,52 +1,116 @@
 import { TextField } from "@mui/material";
 import React, { useState } from "react";
-import { AiOutlineVideoCameraAdd } from "react-icons/ai";
+import { EditorState } from "draft-js";
+import { convertToHTML } from "draft-convert";
+import { AiFillPicture, AiOutlineVideoCameraAdd } from "react-icons/ai";
 import { RiImageAddLine } from "react-icons/ri";
+import useUploadTeachingNotes from "../custom_hooks/useUploadTeachingNotes";
+import DragAndDrop from "./DragAndDrop";
+import StepperComponent from "./Stepper";
+import BasicInfo from "./upload_materials_components/BasicInfo";
+import { streams, years } from "../data";
+import DetailedInfo from "./upload_materials_components/DetailedInfo";
+
 const UploadTeachingNotes = () => {
-  const [image, setImage] = useState("");
-  const [note, setNote] = useState("");
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+  const getText = () => {
+    const contentState = editorState.getCurrentContent();
+    setNote((prev) => ({
+      ...prev,
+      description: convertToHTML(contentState),
+    }));
+  };
+  const {
+    step,
+    onDrop,
+    setThumbnail,
+    thumbnail,
+    steps,
+    file,
+    note,
+    setDescription,
+    setNote,
+    setPrice,
+    setStep,
+    setStream,
+    setSubject,
+    setTitle,
+    setYear,
+    setAnyStep,
+    setNext,
+    setPrev,
+    setTags,
+  } = useUploadTeachingNotes();
 
   return (
-    <div className="upload-container">
-      <h1 className="upload-title">Upload new video</h1>
-      <div className="preview-container">
-        {image && (
-          <img
-            className="thumbnail-previewer"
-            src={URL.createObjectURL(image)}
+    <>
+      <div className="upload-container">
+        <h1 className="upload-title">Upload new video</h1>
+        <StepperComponent step={step} steps={steps} setStep={setAnyStep} />
+
+        {step === 1 && (
+          <>
+            <DragAndDrop onDrop={onDrop} />
+            {file && (
+              <div className="thumbnail-selector">
+                <label
+                  htmlFor="thumbnail-selector-input"
+                  className="thumbnail-selector-label"
+                >
+                  <AiFillPicture />
+                  <span className="thumbnail-selector-text">
+                    Select thumbnail
+                  </span>
+                </label>
+                <input
+                  type="file"
+                  id="thumbnail-selector-input"
+                  // onChange={(e) => handleThumbnail(e)}
+                />
+              </div>
+            )}
+          </>
+        )}
+        {step === 2 && (
+          <BasicInfo
+            material={note}
+            setStream={setStream}
+            setSubject={setSubject}
+            setTitle={setTitle}
+            setYear={setYear}
+            years={years}
+            streams={streams}
           />
         )}
+        {step === 3 && (
+          <DetailedInfo
+            material={note}
+            setPrice={setPrice}
+            setTags={setTags}
+            setEditorState={setEditorState}
+            editorState={editorState}
+            getText={getText} 
+          />
+        )}
+        <div className="next-prev">
+          <button
+            className="prev-btn next-prev-btn"
+            disabled={step < 2}
+            onClick={() => setStep(step - 1)}
+          >
+            Prev
+          </button>
+          <button
+            className="next-btn next-prev-btn"
+            disabled={step > 3}
+            onClick={() => setStep(step + 1)}
+          >
+            Next
+          </button>
+        </div>
       </div>
-      <div className="choose-files-container">
-        <label htmlFor="select-file" className="select-file-label">
-          <AiOutlineVideoCameraAdd className="add-video-icon" />
-          select note
-        </label>
-        <input
-          type="file"
-          name=""
-          accept=".pdf, .docx, .ppt"
-          id="select-file"
-          onChange={(e) => setNote(e.target.files[0])}
-        />
-        <label htmlFor="select-thumbnail" className="select-file-label">
-          <RiImageAddLine className="add-video-icon" color="white" />
-          select thumbnail
-        </label>
-        <input
-          type="file"
-          name=""
-          id="select-thumbnail"
-          accept="image/png, image/jpg, image/jpeg"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
-      </div>
-      <TextField label="Title" />
-      <TextField label="Price" />
-      <TextField label="Description" multiline />
-      <TextField label="Tags" multiline />
-      <button className="upload-btn">upload note</button>
-    </div>
+    </>
   );
 };
 

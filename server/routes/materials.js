@@ -15,8 +15,8 @@ router.post("/video", async (req, res) => {
   const newVideo = new Video(req.body);
   console.log(newVideo);
   try {
-    await newVideo.save();
-    res.status(201).json(newVideo);
+    // await newVideo.save();
+    res.status(201).json("New video added to db");
   } catch (err) {
     res.status(err.status).send(err.message);
   }
