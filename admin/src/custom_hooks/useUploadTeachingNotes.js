@@ -14,6 +14,7 @@ const useUploadTeachingNotes = () => {
   });
   const [file, setFile] = useState(null);
   const [thumbnail, setThumbnail] = useState(null);
+  console.log(thumbnail);
   const [step, setStep] = useState(1);
   const steps = ["Choose file", "Basic info", "Details", "Upload"];
   //   setState functions

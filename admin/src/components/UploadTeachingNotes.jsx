@@ -10,6 +10,7 @@ import StepperComponent from "./Stepper";
 import BasicInfo from "./upload_materials_components/BasicInfo";
 import { streams, years } from "../data";
 import DetailedInfo from "./upload_materials_components/DetailedInfo";
+import Preview from "./upload_materials_components/Preview";
 
 const UploadTeachingNotes = () => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -66,6 +67,7 @@ const UploadTeachingNotes = () => {
                 <input
                   type="file"
                   id="thumbnail-selector-input"
+                  onChange={(e) => setThumbnail(e.target.files[0])}
                   // onChange={(e) => handleThumbnail(e)}
                 />
               </div>
@@ -90,9 +92,10 @@ const UploadTeachingNotes = () => {
             setTags={setTags}
             setEditorState={setEditorState}
             editorState={editorState}
-            getText={getText} 
+            getText={getText}
           />
         )}
+        {step === 4 && <Preview thumbnail={thumbnail} material={note} />}
         <div className="next-prev">
           <button
             className="prev-btn next-prev-btn"

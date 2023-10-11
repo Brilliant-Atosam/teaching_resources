@@ -6,37 +6,37 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav>
-      <div className="nav-left">
+      <Link to="/" className="nav-left">
         <CiBrightnessUp className="logo" />
         <h1 className="logo-text">Brilliant SC</h1>
-      </div>
+      </Link>
       <div className="nav-right">
         <label htmlFor="menu-toggler">
           <HiBars3 className="menu-icon" />
         </label>
         <input type="checkbox" name="" id="menu-toggler" />
         <div className="side-menu">
-          <a href="" className="nav-link">
+          <Link to="/" className="nav-link">
             Videos
-          </a>
-          <a href="" className="nav-link">
+          </Link>
+          <Link to="/teaching_notes" className="nav-link">
             Teaching notes
-          </a>
-          <a href="" className="nav-link">
-            Examination & Assesment
-          </a>
-          <a href="" className="nav-link">
+          </Link>
+          <Link to="/exams" className="nav-link">
+            Examination & Assessment
+          </Link>
+          <Link to="/lesson_plan" className="nav-link">
             Lesson Plan
-          </a>
-          <a href="" className="nav-link">
+          </Link>
+          <Link to="/detailed_notes" className="nav-link">
             Detailed notes
-          </a>
-          <a href="" className="nav-link">
+          </Link>
+          <Link to="/scheme_of_work" className="nav-link">
             Scheme of Work
-          </a>
-          <a href="" className="nav-link">
+          </Link>
+          <Link to="/teaching_notes" className="nav-link">
             Sign Out
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
