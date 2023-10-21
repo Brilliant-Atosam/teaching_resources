@@ -1,0 +1,73 @@
+.top-bar-container {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background: #2d2d2d;
+  color: white;
+}
+.top-bar-left,
+.top-bar-right {
+  flex: 1;
+}
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-icon,
+.logo-text,
+.menu-toggler {
+  font-size: 1.7rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.top-bar-center {
+  flex: 2;
+  border: 0.5px solid white;
+  display: flex;
+  align-items: center;
+  height: 35px;
+  padding: 6px 15px;
+  border-radius: 5px;
+}
+.search-input {
+  border: none;
+  height: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 0.8rem;
+  width: 100%;
+  background-color: transparent;
+}
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.create-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  height: 35px;
+  padding: 6px 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.7rem;
+  color: white;
+  border: 0.5px solid white;
+}
+.upload-icon {
+  font-size: 1rem;
+}

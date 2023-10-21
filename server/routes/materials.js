@@ -14,11 +14,15 @@ router.get("/videos", verifyToken, async (req, res) => {
 router.post("/video", async (req, res) => {
   const newVideo = new Video(req.body);
   console.log(newVideo);
-  try {
-    // await newVideo.save();
-    res.status(201).json("New video added to db");
-  } catch (err) {
-    res.status(err.status).send(err.message);
+  if (newVideo.video_url) {
+    try {
+      // await newVideo.save();
+      res.status(201).json("New video added to db");
+    } catch (err) {
+      res.status(err.status).send(err.message);
+    }
+  } else {
+    res.send("Cannot perform this action");
   }
 });
 // EDIT MATERIAL
