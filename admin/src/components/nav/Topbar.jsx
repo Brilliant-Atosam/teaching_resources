@@ -6,6 +6,7 @@ import { SlMenu } from "react-icons/sl";
 import { Avatar } from "@mui/material";
 import useMenu from "../../custom_hooks/useMenu";
 import SideMenu from "./SideMenu";
+import SideMenuToggled from "./SideMenuToggled";
 const Topbar = () => {
   const { handleToggle, toggleMenu } = useMenu();
   return (
@@ -34,10 +35,13 @@ const Topbar = () => {
           <button className="create-btn">
             <MdOutlineAddLink className="upload-icon" /> Upload
           </button>
-          <Avatar />
+          <Avatar className="top-bar-avatar" />
+        </div>
+        <div className="mb-search-toggler">
+          <CiSearch className="search-icon" />
         </div>
       </div>
-      <SideMenu toggleMenu={toggleMenu} />
+      {toggleMenu ? <SideMenuToggled /> : <SideMenu />}
     </>
   );
 };

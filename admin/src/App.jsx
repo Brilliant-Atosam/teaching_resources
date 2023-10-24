@@ -8,11 +8,13 @@ import SuspenseComponent from "./Suspense";
 import { useSelector } from "react-redux";
 import Topbar from "./components/nav/Topbar";
 import SideMenu from "./components/nav/SideMenu";
+import Dashboard from "./pages/Dashboard";
 const App = () => {
   const admin = useSelector((state) => state.admin.adminCredential);
   return (
     <>
       {!admin && <Topbar />}
+      <Dashboard />
       {/* {!admin && <SideMenu />} */}
       {/* <Routes>
         {routes.map((route, i) => (

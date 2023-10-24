@@ -21,7 +21,7 @@
 .logo-icon,
 .logo-text,
 .menu-toggler {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   font-weight: 400;
   cursor: pointer;
 }
@@ -70,4 +70,26 @@
 }
 .upload-icon {
   font-size: 1rem;
+}
+.mb-search-toggler {
+  display: none;
+}
+@media (max-width: 801px) {
+  .top-bar-container {
+    padding: 0 15px;
+  }
+  .logo-text {
+    font-size: 1.4rem;
+  }
+  .top-bar-right {
+    display: none;
+  }
+}
+@media (max-width: 541px) {
+  .mb-search-toggler {
+    display: inline-block;
+  }
+  .top-bar-center {
+    display: none;
+  }
 }
