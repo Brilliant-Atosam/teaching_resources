@@ -10,10 +10,17 @@ import {
   MdPlayLesson,
   MdSettingsSuggest,
 } from "react-icons/md";
-import { GiTeacher, GiDirectionSigns } from "react-icons/gi";
-import { TbListDetails } from "react-icons/tb";
+import {
+  GiTeacher,
+  GiDirectionSigns,
+  GiCash,
+  GiReceiveMoney,
+} from "react-icons/gi";
+import { TbListDetails, TbMoneybag } from "react-icons/tb";
 import { BsFillPenFill } from "react-icons/bs";
 import { MdDelete, MdMovieEdit, MdRemoveRedEye } from "react-icons/md";
+import Table from "../components/Table";
+import { salesColumn, salesRow } from "../data";
 const Dashboard = () => {
   return (
     <div className="main-container">
@@ -54,27 +61,63 @@ const Dashboard = () => {
           <div className="channel-analytics-container">
             <h1 className="dash-item-title">Channel performance</h1>
             <div className="channel-content-container">
-              <li className="side-menu-nav-item">
-                <BiSolidDashboard className="side-menu-nav-icon" />
-              </li>
-              <li className="side-menu-nav-item">
-                <MdOndemandVideo className="side-menu-nav-icon" />{" "}
-              </li>
-              <li className="side-menu-nav-item">
-                <MdPlayLesson className="side-menu-nav-icon" />
-              </li>
-              <li className="side-menu-nav-item">
-                <GiTeacher className="side-menu-nav-icon" />{" "}
-              </li>
-              <li className="side-menu-nav-item">
-                <BsFillPenFill className="side-menu-nav-icon" />{" "}
-              </li>
-              <li className="side-menu-nav-item">
-                <GiDirectionSigns className="side-menu-nav-icon" />{" "}
-              </li>
-              <li className="side-menu-nav-item">
-                <TbListDetails className="side-menu-nav-icon" />{" "}
-              </li>
+              <h1 className="sub-title">Channel Content</h1>
+              <div className="channel-content-sub-container">
+                <div className="channel-analytic-item-container">
+                  <MdOndemandVideo className="channel-analytic-icon" />{" "}
+                  <span className="channel-analytic-data">33</span>
+                </div>
+                <div className="channel-analytic-item-container">
+                  <MdPlayLesson className="channel-analytic-icon" />
+                  <span className="channel-analytic-data">33</span>
+                </div>
+                <div className="channel-analytic-item-container">
+                  <GiTeacher className="channel-analytic-icon" />
+                  <span className="channel-analytic-data">33</span>
+                </div>
+                <div className="channel-analytic-item-container">
+                  <BsFillPenFill className="channel-analytic-icon" />
+                  <span className="channel-analytic-data">33</span>
+                </div>
+                <div className="channel-analytic-item-container">
+                  <GiDirectionSigns className="channel-analytic-icon" />
+                  <span className="channel-analytic-data">33</span>
+                </div>
+                <div className="channel-analytic-item-container">
+                  <TbListDetails className="channel-analytic-icon" />
+                  <span className="channel-analytic-data">33</span>
+                </div>
+              </div>
+            </div>
+            <div className="channel-content-container">
+              <h1 className="sub-title">Channel Revenue</h1>
+              <div className="channel-content-sub-container">
+                <div className="revenue-container">
+                  <div className="revenue-item">
+                    <div className="revenue-item-left">
+                      <GiCash className="revenue-icon" />{" "}
+                      <h2 className="revenue-title">Total Revenue</h2>:
+                    </div>
+                    <h2 className="revenue-value">300.00</h2>
+                  </div>
+                  <div className="revenue-item">
+                    <div className="revenue-item-left">
+                      <GiReceiveMoney className="revenue-icon" />{" "}
+                      <h2 className="revenue-title">Amount withdrawn</h2>:
+                    </div>
+                    <h2 className="revenue-value">300.00</h2>
+                  </div>
+                  <div className="revenue-item">
+                    <div className="revenue-item-left">
+                      {" "}
+                      <TbMoneybag className="revenue-icon" />{" "}
+                      <h2 className="revenue-title">Balance</h2>:
+                    </div>
+                    <h2 className="revenue-value">300.00</h2>
+                  </div>
+                  <button className="revenue-btn">withdraw</button>
+                </div>
+              </div>
             </div>
           </div>
           <div className="published-videos-container">
@@ -105,9 +148,13 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
+              <button className="revenue-btn">see all videos</button>
             </div>
           </div>
-          <div className="purchases-container"></div>
+          <div className="sales-history-container">
+            <h1 className="dash-item-title">Sales history</h1>
+            <Table columns={salesColumn} rows={salesRow} />
+          </div>
         </div>
       </div>
     </div>

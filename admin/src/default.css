@@ -35,3 +35,7 @@ h1 {
   padding: 20px 20px;
   /* background: red; */
 }
+.data-grid {
+  color: white !important;
+  fill: white !important;
+}
