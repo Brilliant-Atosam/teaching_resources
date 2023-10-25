@@ -57,6 +57,7 @@ export default function UploadVideoInfoDialog() {
         </DialogContent>
         <DialogActions>
           {/* <CircularProgress />  */}
+          <Button>Publish</Button>
           <Button>Next</Button>
         </DialogActions>
       </Dialog>
