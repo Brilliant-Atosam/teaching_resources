@@ -1,0 +1,74 @@
+.upload-dialog-container {
+  background: #2d2d2d42;
+}
+.upload-dialog-title {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2d2d2d;
+  color: white;
+  border-bottom: 0.5px solid lightgray;
+}
+.upload-title {
+  font-size: 1.2rem;
+}
+.upload-title-icon {
+  cursor: pointer;
+  color: white !important;
+  fill: white !important;
+}
+.upload-dialog-content-container {
+    /* width: 70vw; */
+  background: #2d2d2d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.drag-n-drop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+}
+.drag-n-drop-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+.select-file-icon {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background: #373738;
+  padding: 30px;
+  cursor: pointer;
+}
+.select-file-btn {
+  cursor: pointer;
+  background: #000;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 10px 15px;
+}
+.upload-dialog-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background: #2d2d2d;
+  border-top: 1px solid lightgrey;
+}
+.upload-policy-agreement-notice {
+  font-size: 12px;
+  color: white;
+  margin-bottom: 10px;
+}
