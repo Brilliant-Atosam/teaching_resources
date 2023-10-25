@@ -16,6 +16,9 @@ import { useDropzone } from "react-dropzone";
 import { MdFileUpload } from "react-icons/md";
 import Stepper from "./Stepper";
 import StepperComponent from "./Stepper";
+import BasicInfo from "./uploads/BasicInfo";
+import MoreInfo from "./uploads/MoreInfo";
+import Preview from "./uploads/Preview";
 export default function UploadVideoInfoDialog() {
   const [open, setOpen] = useState(true);
   const theme = useTheme();
@@ -48,9 +51,13 @@ export default function UploadVideoInfoDialog() {
         </DialogTitle>
         <DialogContent className="upload-info-dialog-content-container">
           <StepperComponent />
+          {/* <BasicInfo /> */}
+          {/* <MoreInfo /> */}
+          <Preview />
         </DialogContent>
         <DialogActions>
-          <CircularProgress /> <Button>Next</Button>
+          {/* <CircularProgress />  */}
+          <Button>Next</Button>
         </DialogActions>
       </Dialog>
     </div>

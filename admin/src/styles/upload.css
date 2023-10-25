@@ -19,7 +19,6 @@
   fill: white !important;
 }
 .upload-dialog-content-container {
-    /* width: 70vw; */
   background: #2d2d2d;
   color: white;
   display: flex;
@@ -27,7 +26,13 @@
   justify-content: center;
   min-height: 400px;
 }
-
+.upload-info-dialog-content-container {
+  /* width: 70vw; */
+  width: 600px;
+  /* background: #2d2d2d; */
+  color: white !important;
+  fill: white !important;
+}
 .drag-n-drop-container {
   display: flex;
   flex-direction: column;
@@ -71,4 +76,24 @@
   font-size: 12px;
   color: white;
   margin-bottom: 10px;
+}
+.stepper-box {
+  margin: 15px 0;
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.video-preview-container {
+  width: 100%;
+}
+.preview-video {
+  width: 100%;
+}
+#choose-thumbnail {
+  display: none;
+}
+.choose-thumbnail-icon{
+  background: #000;
 }
