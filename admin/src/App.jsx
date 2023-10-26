@@ -11,6 +11,7 @@ import SideMenu from "./components/nav/SideMenu";
 import Dashboard from "./pages/Dashboard";
 import UploadVideoDialog from "./components/UploadVideoDialog";
 import UploadVideoInfoDialog from "./components/UploadVideoInfoDialog";
+import VideoDetails from "./pages/VideoDetails";
 const App = () => {
   const admin = useSelector((state) => state.admin.adminCredential);
   return (
@@ -18,7 +19,7 @@ const App = () => {
       {!admin && <Topbar />}
       <UploadVideoDialog />
       <UploadVideoInfoDialog />
-      <Dashboard />
+      <VideoDetails />
       {/* {!admin && <SideMenu />} */}
       {/* <Routes>
         {routes.map((route, i) => (

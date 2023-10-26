@@ -20,7 +20,7 @@ import BasicInfo from "./uploads/BasicInfo";
 import MoreInfo from "./uploads/MoreInfo";
 import Preview from "./uploads/Preview";
 export default function UploadVideoInfoDialog() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
